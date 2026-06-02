@@ -1,0 +1,8 @@
+{
+    "type": "simpleplanes:plane_workbench",
+
+    "ingredient": "simpleplanes:propeller",
+    "ingredient_amount": 4,
+    "material_amount": 64,
+    "result": "simpleplanes:cargo_plane"
+}
