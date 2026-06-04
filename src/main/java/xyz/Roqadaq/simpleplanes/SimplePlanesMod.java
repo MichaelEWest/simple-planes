@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes;
+package xyz.roqadaq.simpleplanes;
 
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EntityType;
@@ -9,11 +9,11 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import xyz.przemyk.simpleplanes.compat.ironchest.IronChestsCompat;
-import xyz.przemyk.simpleplanes.compat.quark.QuarkCompat;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.network.SimplePlanesNetworking;
-import xyz.przemyk.simpleplanes.setup.*;
+import xyz.roqadaq.simpleplanes.compat.ironchest.IronChestsCompat;
+import xyz.roqadaq.simpleplanes.compat.quark.QuarkCompat;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.network.SimplePlanesNetworking;
+import xyz.roqadaq.simpleplanes.setup.*;
 
 @Mod(SimplePlanesMod.MODID)
 public class SimplePlanesMod {

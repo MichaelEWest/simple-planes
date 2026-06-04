@@ -1,10 +1,11 @@
-package xyz.przemyk.simpleplanes.container;
+package xyz.roqadaq.simpleplanes.container;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.inventory.*;
 import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -18,15 +19,16 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.resources.Identifier;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.network.CycleItemsPacket;
-import xyz.przemyk.simpleplanes.recipes.PlaneWorkbenchRecipe;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesBlocks;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesComponents;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesContainers;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesRecipes;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.network.CycleItemsPacket;
+import xyz.roqadaq.simpleplanes.recipes.PlaneWorkbenchRecipe;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesBlocks;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesComponents;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesContainers;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesRecipes;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PlaneWorkbenchContainer extends AbstractContainerMenu {
 
@@ -50,8 +52,11 @@ public class PlaneWorkbenchContainer extends AbstractContainerMenu {
         this.player = playerInventory.player;
         this.itemHandler = itemHandler;
         this.usabilityTest = ContainerLevelAccess.create(player.level(), blockPos);
-        // TODO: RecipeManager.getAllRecipesFor API changed in MC 1.21.5 - needs migration
-        this.recipeList = List.of();
+        this.recipeList = player.level().isClientSide() ? List.of() :
+            ((RecipeManager) player.level().recipeAccess()).getRecipes().stream()
+                .filter(h -> h.value().getType().equals(SimplePlanesRecipes.PLANE_WORKBENCH_RECIPE_TYPE.get()))
+                .map(h -> (RecipeHolder<PlaneWorkbenchRecipe>) h)
+                .collect(Collectors.toList());
         this.selectedRecipe = selectedRecipe;
 
         addSlot(new SlotItemHandler(itemHandler, 0, 28, 47));
@@ -70,6 +75,7 @@ public class PlaneWorkbenchContainer extends AbstractContainerMenu {
         updateCraftingResult();
     }
     public void cycleItems(CycleItemsPacket.Direction direction) {
+        if (recipeList.isEmpty()) return;
         int prevSelectedRecipe = selectedRecipe.get();
         ItemStack ingredient = itemHandler.getStackInSlot(0);
         ItemStack material = itemHandler.getStackInSlot(1);
@@ -98,35 +104,43 @@ public class PlaneWorkbenchContainer extends AbstractContainerMenu {
     }
     public void onCrafting() {
         if (!player.level().isClientSide()) {
-            PlaneWorkbenchRecipe recipe = recipeList.get(selectedRecipe.get()).value();
-            itemHandler.extractItem(0, recipe.ingredientAmount(), false);
-            itemHandler.extractItem(1, recipe.materialAmount(), false);
+            int idx = selectedRecipe.get();
+            if (!recipeList.isEmpty() && idx >= 0 && idx < recipeList.size()) {
+                PlaneWorkbenchRecipe recipe = recipeList.get(idx).value();
+                itemHandler.extractItem(0, recipe.ingredientAmount(), false);
+                itemHandler.extractItem(1, recipe.materialAmount(), false);
+            }
             updateCraftingResult();
-}
-}
+        }
+    }
     @SuppressWarnings("deprecation")
     protected void updateCraftingResult() {
         if (!this.player.level().isClientSide()) {
             ServerPlayer serverPlayerEntity = (ServerPlayer) this.player;
             ItemStack result = ItemStack.EMPTY;
-            ItemStack ingredientStack = itemHandler.getStackInSlot(0);
-            ItemStack materialStack = itemHandler.getStackInSlot(1);
-            Item materialItem = materialStack.getItem();
 
-            PlaneWorkbenchRecipe recipe = recipeList.get(selectedRecipe.get()).value();
+            int idx = selectedRecipe.get();
+            if (!recipeList.isEmpty() && idx >= 0 && idx < recipeList.size()) {
+                ItemStack ingredientStack = itemHandler.getStackInSlot(0);
+                ItemStack materialStack = itemHandler.getStackInSlot(1);
+                Item materialItem = materialStack.getItem();
 
-            if (recipe.canCraft(ingredientStack, materialStack) && materialItem instanceof BlockItem blockItem &&
-                blockItem.getBlock().builtInRegistryHolder().is(PLANE_MATERIALS_TAG)) {
+                PlaneWorkbenchRecipe recipe = recipeList.get(idx).value();
 
-                result = recipe.result().copy();
-                Block block = blockItem.getBlock();
-                resultItemTag.putString("material", BuiltInRegistries.BLOCK.getKey(block).toString());
-                result.set(SimplePlanesComponents.ENTITY_TAG, resultItemTag);
-}
+                if (recipe.canCraft(ingredientStack, materialStack) && materialItem instanceof BlockItem blockItem &&
+                    blockItem.getBlock().builtInRegistryHolder().is(PLANE_MATERIALS_TAG)) {
+
+                    result = recipe.result().copy();
+                    Block block = blockItem.getBlock();
+                    resultItemTag.putString("material", BuiltInRegistries.BLOCK.getKey(block).toString());
+                    result.set(SimplePlanesComponents.ENTITY_TAG, resultItemTag);
+                }
+            }
+
             resultItemHandler.setStackInSlot(0, result);
             serverPlayerEntity.connection.send(new ClientboundContainerSetSlotPacket(containerId, 0, 2, result));
-}
-}
+        }
+    }
     @Override
     public boolean stillValid(Player playerIn) {
         return stillValid(usabilityTest, playerIn, SimplePlanesBlocks.PLANE_WORKBENCH_BLOCK.get());

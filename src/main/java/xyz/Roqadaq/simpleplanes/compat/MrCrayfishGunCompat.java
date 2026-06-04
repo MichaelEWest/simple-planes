@@ -1,4 +1,4 @@
-//package xyz.przemyk.simpleplanes.compat;
+//package xyz.roqadaq.simpleplanes.compat;
 //
 //import com.mrcrayfish.guns.Config;
 //import com.mrcrayfish.guns.common.Gun;
@@ -25,7 +25,7 @@
 //import net.minecraftforge.items.ItemStackHandler;
 //import net.minecraftforge.network.PacketDistributor;
 //import net.minecraftforge.registries.ForgeRegistries;
-//import xyz.przemyk.simpleplanes.entities.PlaneEntity;
+//import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
 //
 //public class MrCrayfishGunCompat {
 //    @SubscribeEvent

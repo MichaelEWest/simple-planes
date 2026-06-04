@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.items;
+package xyz.roqadaq.simpleplanes.items;
 
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -23,9 +23,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesComponents;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesComponents;
 
 import java.util.List;
 import java.util.function.Consumer;

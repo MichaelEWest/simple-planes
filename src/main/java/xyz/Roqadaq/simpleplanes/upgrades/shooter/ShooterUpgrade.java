@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.upgrades.shooter;
+package xyz.roqadaq.simpleplanes.upgrades.shooter;
 
 import net.minecraft.util.Util;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -22,11 +22,11 @@ import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
 import org.joml.Vector3f;
-import xyz.przemyk.simpleplanes.client.gui.PlaneInventoryScreen;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesItems;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesUpgrades;
-import xyz.przemyk.simpleplanes.upgrades.Upgrade;
+import xyz.roqadaq.simpleplanes.client.gui.PlaneInventoryScreen;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesItems;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesUpgrades;
+import xyz.roqadaq.simpleplanes.upgrades.Upgrade;
 
 import java.util.function.Function;
 
@@ -108,6 +108,6 @@ public class ShooterUpgrade extends Upgrade {
 }
     @Override
     public void renderScreenBg(GuiGraphicsExtractor guiGraphics, int x, int y, float partialTicks, PlaneInventoryScreen screen) {
-        guiGraphics.blit(PlaneInventoryScreen.GUI, screen.getGuiLeft() + 133, screen.getGuiTop() + 61, 226, 0, 18, 18, 256, 256);
+        PlaneInventoryScreen.blitGui(guiGraphics, PlaneInventoryScreen.GUI, screen.getGuiLeft() + 133, screen.getGuiTop() + 61, 226, 0, 18, 18);
 }
 }

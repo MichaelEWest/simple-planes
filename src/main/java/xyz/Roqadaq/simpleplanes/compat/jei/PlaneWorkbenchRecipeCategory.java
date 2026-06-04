@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.compat.jei;
+package xyz.roqadaq.simpleplanes.compat.jei;
 
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.widgets.IRecipeExtrasBuilder;
@@ -9,10 +9,10 @@ import mezz.jei.api.recipe.category.AbstractRecipeCategory;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.container.PlaneWorkbenchContainer;
-import xyz.przemyk.simpleplanes.recipes.PlaneWorkbenchRecipe;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesBlocks;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.container.PlaneWorkbenchContainer;
+import xyz.roqadaq.simpleplanes.recipes.PlaneWorkbenchRecipe;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesBlocks;
 
 import java.util.stream.StreamSupport;
 

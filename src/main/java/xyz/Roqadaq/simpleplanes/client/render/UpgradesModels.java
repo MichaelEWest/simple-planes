@@ -1,13 +1,13 @@
-package xyz.przemyk.simpleplanes.client.render;
-import xyz.przemyk.simpleplanes.client.render.PlaneRenderState;
+package xyz.roqadaq.simpleplanes.client.render;
+import xyz.roqadaq.simpleplanes.client.render.PlaneRenderState;
 
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.monster.shulker.ShulkerModel;
 import net.minecraft.resources.Identifier;
-import xyz.przemyk.simpleplanes.upgrades.UpgradeType;
-import xyz.przemyk.simpleplanes.upgrades.armor.ArmorWindowModel;
-import xyz.przemyk.simpleplanes.upgrades.floating.WoodenCargoFloatingModel;
-import xyz.przemyk.simpleplanes.upgrades.seats.*;
+import xyz.roqadaq.simpleplanes.upgrades.UpgradeType;
+import xyz.roqadaq.simpleplanes.upgrades.armor.ArmorWindowModel;
+import xyz.roqadaq.simpleplanes.upgrades.floating.WoodenCargoFloatingModel;
+import xyz.roqadaq.simpleplanes.upgrades.seats.*;
 
 import java.util.HashMap;
 

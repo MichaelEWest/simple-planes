@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.recipes;
+package xyz.roqadaq.simpleplanes.recipes;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;

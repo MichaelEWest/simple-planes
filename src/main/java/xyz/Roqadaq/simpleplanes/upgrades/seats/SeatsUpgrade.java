@@ -1,5 +1,5 @@
-package xyz.przemyk.simpleplanes.upgrades.seats;
-import xyz.przemyk.simpleplanes.client.render.PlaneRenderState;
+package xyz.roqadaq.simpleplanes.upgrades.seats;
+import xyz.roqadaq.simpleplanes.client.render.PlaneRenderState;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -8,13 +8,13 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.client.render.UpgradesModels;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesEntities;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesItems;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesUpgrades;
-import xyz.przemyk.simpleplanes.upgrades.Upgrade;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.client.render.UpgradesModels;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesEntities;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesItems;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesUpgrades;
+import xyz.roqadaq.simpleplanes.upgrades.Upgrade;
 
 public class SeatsUpgrade extends Upgrade {
 

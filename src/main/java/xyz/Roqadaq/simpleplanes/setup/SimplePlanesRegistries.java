@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.setup;
+package xyz.roqadaq.simpleplanes.setup;
 
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
@@ -7,8 +7,8 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.registries.NewRegistryEvent;
 import net.neoforged.neoforge.registries.RegistryBuilder;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.upgrades.UpgradeType;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.upgrades.UpgradeType;
 
 @SuppressWarnings("unused")
 @EventBusSubscriber(modid = SimplePlanesMod.MODID)

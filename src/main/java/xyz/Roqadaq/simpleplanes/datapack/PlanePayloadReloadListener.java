@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.datapack;
+package xyz.roqadaq.simpleplanes.datapack;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

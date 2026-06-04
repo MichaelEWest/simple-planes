@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.container;
+package xyz.roqadaq.simpleplanes.container;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
@@ -7,9 +7,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesContainers;
-import xyz.przemyk.simpleplanes.upgrades.Upgrade;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesContainers;
+import xyz.roqadaq.simpleplanes.upgrades.Upgrade;
 
 public class PlaneInventoryContainer extends AbstractContainerMenu implements CycleableContainer {
 

@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.entities;
+package xyz.roqadaq.simpleplanes.entities;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -21,8 +21,8 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesEntities;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesItems;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesEntities;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesItems;
 
 public class ParachuteEntity extends Entity {
 

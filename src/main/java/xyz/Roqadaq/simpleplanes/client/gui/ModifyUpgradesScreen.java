@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.client.gui;
+package xyz.roqadaq.simpleplanes.client.gui;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -12,9 +12,9 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.container.ModifyUpgradesContainer;
-import xyz.przemyk.simpleplanes.entities.CargoPlaneEntity;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.container.ModifyUpgradesContainer;
+import xyz.roqadaq.simpleplanes.entities.CargoPlaneEntity;
 
 import javax.annotation.Nullable;
 

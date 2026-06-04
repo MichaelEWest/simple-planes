@@ -1,5 +1,6 @@
-package xyz.przemyk.simpleplanes.client;
+package xyz.roqadaq.simpleplanes.client;
 
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Camera;
 import net.minecraft.client.CameraType;
 import net.minecraft.client.KeyMapping;
@@ -13,13 +14,14 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import com.mojang.math.Axis;
 import net.neoforged.neoforge.client.event.CalculateDetachedCameraDistanceEvent;
+import net.neoforged.neoforge.client.event.RenderLivingEvent;
 import net.neoforged.neoforge.client.event.ViewportEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import org.joml.Quaternionf;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.misc.MathUtil;
-import xyz.przemyk.simpleplanes.network.*;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.misc.MathUtil;
+import xyz.roqadaq.simpleplanes.network.*;
 
 @EventBusSubscriber(Dist.CLIENT)
 public class ClientEventHandler {
@@ -34,7 +36,9 @@ public class ClientEventHandler {
     public static KeyMapping yawRight;
     public static KeyMapping yawLeft;
 
-    // TODO: RenderLivingEvent no longer exposes getEntity() in NeoForge 26.x - passenger rotation not implemented
+    // Quaternion of the plane the local player is currently riding; null when not riding.
+    private static Quaternionf riderQPrev = null;
+    private static Quaternionf riderQClient = null;
 
     private static boolean oldMoveHeliUpState = false;
     private static boolean oldPitchUpState = false;
@@ -48,6 +52,8 @@ public class ClientEventHandler {
         if (player instanceof LocalPlayer) {
             if (player.getVehicle() instanceof PlaneEntity planeEntity) {
                 Minecraft mc = Minecraft.getInstance();
+                riderQPrev = planeEntity.getQ_Prev();
+                riderQClient = planeEntity.getQ_Client();
                 if (mc.options.getCameraType() != CameraType.FIRST_PERSON) {
                     planeEntity.applyYawToEntity(player);
 }
@@ -82,6 +88,8 @@ public class ClientEventHandler {
                 oldYawRightState = isYawRight;
                 oldYawLeftState = isYawLeft;
 } else {
+                riderQPrev = null;
+                riderQClient = null;
                 oldMoveHeliUpState = false;
                 oldPitchUpState = false;
                 oldPitchDownState = false;
@@ -89,6 +97,27 @@ public class ClientEventHandler {
                 oldYawLeftState = false;
 }
 }
+    }
+
+    @SubscribeEvent
+    public static void onRenderLivingPre(RenderLivingEvent.Pre<?, ?, ?> event) {
+        if (riderQClient == null) return;
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.player == null) return;
+
+        // Identify this render as the local player by position proximity.
+        var state = event.getRenderState();
+        double dx = state.x - mc.player.getX();
+        double dz = state.z - mc.player.getZ();
+        if (dx * dx + dz * dz > 1.0) return;
+
+        float partial = event.getPartialTick();
+        Quaternionf q = MathUtil.lerpQ(partial, riderQPrev, riderQClient);
+        MathUtil.EulerAngles angles = MathUtil.toEulerAngles(q);
+
+        PoseStack poseStack = event.getPoseStack();
+        poseStack.mulPose(Axis.ZP.rotationDegrees((float) angles.roll));
+        poseStack.mulPose(Axis.XP.rotationDegrees((float) -angles.pitch));
     }
     //TODO: make it so player rotation variables correspond to what he is actually looking at, so that guns etc. shoot in the right direction
     @SubscribeEvent(priority = EventPriority.LOWEST)

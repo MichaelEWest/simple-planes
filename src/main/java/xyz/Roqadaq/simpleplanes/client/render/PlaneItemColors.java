@@ -1,11 +1,11 @@
-package xyz.przemyk.simpleplanes.client.render;
+package xyz.roqadaq.simpleplanes.client.render;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesComponents;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesComponents;
 
 import java.util.HashMap;
 

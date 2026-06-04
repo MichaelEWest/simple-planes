@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.setup;
+package xyz.roqadaq.simpleplanes.setup;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityDimensions;
@@ -7,8 +7,8 @@ import net.minecraft.world.entity.MobCategory;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.entities.*;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.entities.*;
 
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;

@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.datapack;
+package xyz.roqadaq.simpleplanes.datapack;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.EntityType;

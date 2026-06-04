@@ -1,8 +1,8 @@
-package xyz.przemyk.simpleplanes.upgrades;
+package xyz.roqadaq.simpleplanes.upgrades;
 
 import net.minecraft.world.entity.player.Player;
-import xyz.przemyk.simpleplanes.entities.LargePlaneEntity;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.entities.LargePlaneEntity;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
 
 public abstract class LargeUpgrade extends Upgrade {
 

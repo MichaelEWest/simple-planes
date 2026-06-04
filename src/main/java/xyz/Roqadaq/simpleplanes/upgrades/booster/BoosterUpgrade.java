@@ -1,11 +1,11 @@
-package xyz.przemyk.simpleplanes.upgrades.booster;
+package xyz.roqadaq.simpleplanes.upgrades.booster;
 
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.world.item.ItemStack;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesItems;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesUpgrades;
-import xyz.przemyk.simpleplanes.upgrades.Upgrade;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesItems;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesUpgrades;
+import xyz.roqadaq.simpleplanes.upgrades.Upgrade;
 
 public class BoosterUpgrade extends Upgrade {
     public static final int MAX_THROTTLE = 10;

@@ -1,5 +1,5 @@
-package xyz.przemyk.simpleplanes.upgrades.banner;
-import xyz.przemyk.simpleplanes.client.render.PlaneRenderState;
+package xyz.roqadaq.simpleplanes.upgrades.banner;
+import xyz.roqadaq.simpleplanes.client.render.PlaneRenderState;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -9,10 +9,10 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.world.item.BannerItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import xyz.przemyk.simpleplanes.misc.MathUtil;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesUpgrades;
-import xyz.przemyk.simpleplanes.upgrades.Upgrade;
+import xyz.roqadaq.simpleplanes.misc.MathUtil;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesUpgrades;
+import xyz.roqadaq.simpleplanes.upgrades.Upgrade;
 
 public class BannerUpgrade extends Upgrade {
 

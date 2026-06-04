@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.client.gui;
+package xyz.roqadaq.simpleplanes.client.gui;
 
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.ImageButton;
@@ -7,9 +7,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Inventory;
 import net.neoforged.neoforge.client.network.ClientPacketDistributor;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.container.PlaneWorkbenchContainer;
-import xyz.przemyk.simpleplanes.network.CycleItemsPacket;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.container.PlaneWorkbenchContainer;
+import xyz.roqadaq.simpleplanes.network.CycleItemsPacket;
 
 public class PlaneWorkbenchScreen extends AbstractContainerScreen<PlaneWorkbenchContainer> {
 

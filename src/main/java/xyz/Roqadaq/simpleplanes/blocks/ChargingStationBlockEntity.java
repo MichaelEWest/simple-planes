@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.blocks;
+package xyz.roqadaq.simpleplanes.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;
@@ -7,8 +7,8 @@ import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import xyz.przemyk.simpleplanes.misc.EnergyStorageWithSet;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesBlocks;
+import xyz.roqadaq.simpleplanes.misc.EnergyStorageWithSet;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesBlocks;
 
 public class ChargingStationBlockEntity extends BlockEntity {
 

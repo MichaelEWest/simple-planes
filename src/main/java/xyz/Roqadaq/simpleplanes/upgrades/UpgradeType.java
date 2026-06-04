@@ -1,6 +1,6 @@
-package xyz.przemyk.simpleplanes.upgrades;
+package xyz.roqadaq.simpleplanes.upgrades;
 
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
 
 import java.util.function.Function;
 

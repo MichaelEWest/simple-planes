@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.setup;
+package xyz.roqadaq.simpleplanes.setup;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -6,9 +6,9 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.recipes.PlaneWorkbenchRecipe;
-import xyz.przemyk.simpleplanes.recipes.PlaneWorkbenchRecipeSerializer;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.recipes.PlaneWorkbenchRecipe;
+import xyz.roqadaq.simpleplanes.recipes.PlaneWorkbenchRecipeSerializer;
 
 import java.util.function.Supplier;
 

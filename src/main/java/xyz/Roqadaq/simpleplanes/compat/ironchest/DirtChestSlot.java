@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.compat.ironchest;
+package xyz.roqadaq.simpleplanes.compat.ironchest;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;

@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.client.render;
+package xyz.roqadaq.simpleplanes.client.render;
 
 import net.minecraft.client.renderer.entity.state.EntityRenderState;
 

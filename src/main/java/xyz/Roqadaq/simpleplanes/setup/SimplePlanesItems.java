@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.setup;
+package xyz.roqadaq.simpleplanes.setup;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -11,12 +11,12 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.container.PlaneWorkbenchContainer;
-import xyz.przemyk.simpleplanes.items.DescriptionItem;
-import xyz.przemyk.simpleplanes.items.ParachuteItem;
-import xyz.przemyk.simpleplanes.items.PlaneArmorItem;
-import xyz.przemyk.simpleplanes.items.PlaneItem;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.container.PlaneWorkbenchContainer;
+import xyz.roqadaq.simpleplanes.items.DescriptionItem;
+import xyz.roqadaq.simpleplanes.items.ParachuteItem;
+import xyz.roqadaq.simpleplanes.items.PlaneArmorItem;
+import xyz.roqadaq.simpleplanes.items.PlaneItem;
 
 import java.util.ArrayList;
 import java.util.List;

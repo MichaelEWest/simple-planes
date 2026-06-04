@@ -1,10 +1,10 @@
-package xyz.przemyk.simpleplanes.client;
+package xyz.roqadaq.simpleplanes.client;
 
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.fluids.FluidStack;
-import xyz.przemyk.simpleplanes.client.gui.PlaneInventoryScreen;
+import xyz.roqadaq.simpleplanes.client.gui.PlaneInventoryScreen;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 
 public class ClientUtil {

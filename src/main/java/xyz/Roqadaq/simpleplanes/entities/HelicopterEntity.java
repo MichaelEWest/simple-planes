@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.entities;
+package xyz.roqadaq.simpleplanes.entities;
 
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -11,11 +11,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
-import xyz.przemyk.simpleplanes.misc.MathUtil;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesConfig;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesItems;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesUpgrades;
-import xyz.przemyk.simpleplanes.upgrades.UpgradeType;
+import xyz.roqadaq.simpleplanes.misc.MathUtil;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesConfig;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesItems;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesUpgrades;
+import xyz.roqadaq.simpleplanes.upgrades.UpgradeType;
 
 public class HelicopterEntity extends LargePlaneEntity {
 

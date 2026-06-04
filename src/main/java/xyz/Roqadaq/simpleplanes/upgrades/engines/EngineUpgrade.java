@@ -1,10 +1,10 @@
-package xyz.przemyk.simpleplanes.upgrades.engines;
+package xyz.roqadaq.simpleplanes.upgrades.engines;
 
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.world.entity.HumanoidArm;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.upgrades.Upgrade;
-import xyz.przemyk.simpleplanes.upgrades.UpgradeType;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.upgrades.Upgrade;
+import xyz.roqadaq.simpleplanes.upgrades.UpgradeType;
 
 public abstract class EngineUpgrade extends Upgrade {
 

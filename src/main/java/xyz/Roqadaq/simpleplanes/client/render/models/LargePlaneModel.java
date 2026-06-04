@@ -1,5 +1,5 @@
-package xyz.przemyk.simpleplanes.client.render.models;
-import xyz.przemyk.simpleplanes.client.render.PlaneRenderState;
+package xyz.roqadaq.simpleplanes.client.render.models;
+import xyz.roqadaq.simpleplanes.client.render.PlaneRenderState;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

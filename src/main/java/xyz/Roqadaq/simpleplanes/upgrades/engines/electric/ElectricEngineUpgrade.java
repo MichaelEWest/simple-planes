@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.upgrades.engines.electric;
+package xyz.roqadaq.simpleplanes.upgrades.engines.electric;
 
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.nbt.CompoundTag;
@@ -9,14 +9,14 @@ import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.capabilities.BaseCapability;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.client.ModBusClientEventHandler;
-import xyz.przemyk.simpleplanes.client.gui.PlaneInventoryScreen;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.misc.EnergyStorageWithSet;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesItems;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesUpgrades;
-import xyz.przemyk.simpleplanes.upgrades.engines.EngineUpgrade;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.client.ModBusClientEventHandler;
+import xyz.roqadaq.simpleplanes.client.gui.PlaneInventoryScreen;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.misc.EnergyStorageWithSet;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesItems;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesUpgrades;
+import xyz.roqadaq.simpleplanes.upgrades.engines.EngineUpgrade;
 
 public class ElectricEngineUpgrade extends EngineUpgrade {
 
@@ -44,19 +44,19 @@ public class ElectricEngineUpgrade extends EngineUpgrade {
     public void renderPowerHUD(GuiGraphicsExtractor guiGraphics, HumanoidArm side, int scaledWidth, int scaledHeight, float partialTicks) {
         int i = scaledWidth / 2;
         if (side == HumanoidArm.LEFT) {
-            guiGraphics.blit(ModBusClientEventHandler.HUD_TEXTURE, i - 91 - 29, scaledHeight - 22, 38, 44, 22, 21, 256, 256);
-} else {
-            guiGraphics.blit(ModBusClientEventHandler.HUD_TEXTURE, i + 91, scaledHeight - 22, 38, 44, 22, 21, 256, 256);
-}
+            PlaneInventoryScreen.blitGui(guiGraphics, ModBusClientEventHandler.HUD_TEXTURE, i - 91 - 29, scaledHeight - 22, 38, 44, 22, 21);
+        } else {
+            PlaneInventoryScreen.blitGui(guiGraphics, ModBusClientEventHandler.HUD_TEXTURE, i + 91, scaledHeight - 22, 38, 44, 22, 21);
+        }
         int energy = energyStorage.getEnergyStored();
 
         if (energy > 0) {
             int energyScaled = energy * 15 / CAPACITY;
             if (side == HumanoidArm.LEFT) {
-                guiGraphics.blit(ModBusClientEventHandler.HUD_TEXTURE, i - 91 - 29 + 3, scaledHeight - 22 + 16 - energyScaled, 60, 57 - energyScaled, 16, energyScaled + 2, 256, 256);
-} else {
-                guiGraphics.blit(ModBusClientEventHandler.HUD_TEXTURE, i + 91 + 3, scaledHeight - 22 + 16 - energyScaled, 60, 57 - energyScaled, 16, energyScaled + 2, 256, 256);
-}
+                PlaneInventoryScreen.blitGui(guiGraphics, ModBusClientEventHandler.HUD_TEXTURE, i - 91 - 29 + 3, scaledHeight - 22 + 16 - energyScaled, 60, 57 - energyScaled, 16, energyScaled + 2);
+            } else {
+                PlaneInventoryScreen.blitGui(guiGraphics, ModBusClientEventHandler.HUD_TEXTURE, i + 91 + 3, scaledHeight - 22 + 16 - energyScaled, 60, 57 - energyScaled, 16, energyScaled + 2);
+            }
 }
 }
     @Override
@@ -98,12 +98,12 @@ public class ElectricEngineUpgrade extends EngineUpgrade {
 }
     @Override
     public void renderScreenBg(GuiGraphicsExtractor guiGraphics, int x, int y, float partialTicks, PlaneInventoryScreen screen) {
-        guiGraphics.blit(PlaneInventoryScreen.GUI, screen.getGuiLeft() + 152, screen.getGuiTop() + 7, 176, 0, 16, 72, 256, 256);
+        PlaneInventoryScreen.blitGui(guiGraphics, PlaneInventoryScreen.GUI, screen.getGuiLeft() + 152, screen.getGuiTop() + 7, 176, 0, 16, 72);
 
         int energy = energyStorage.getEnergyStored();
         if (energy > 0) {
             int energyScaled = energy * 71 / CAPACITY;
-            guiGraphics.blit(PlaneInventoryScreen.GUI, screen.getGuiLeft() + 152, screen.getGuiTop() + 78 - energyScaled, 192, 71 - energyScaled, 16, energyScaled + 1, 256, 256);
-}
+            PlaneInventoryScreen.blitGui(guiGraphics, PlaneInventoryScreen.GUI, screen.getGuiLeft() + 152, screen.getGuiTop() + 78 - energyScaled, 192, 71 - energyScaled, 16, energyScaled + 1);
+        }
 }
 }

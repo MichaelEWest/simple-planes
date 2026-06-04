@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.network;
+package xyz.roqadaq.simpleplanes.network;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.network.codec.StreamCodec;
@@ -8,8 +8,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
 
 public record OpenPlaneInventoryPacket() implements CustomPacketPayload {
 

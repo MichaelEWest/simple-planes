@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.upgrades;
+package xyz.roqadaq.simpleplanes.upgrades;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
@@ -13,11 +13,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.neoforged.neoforge.capabilities.BaseCapability;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import xyz.przemyk.simpleplanes.client.gui.PlaneInventoryScreen;
-import xyz.przemyk.simpleplanes.client.render.PlaneRenderState;
-import xyz.przemyk.simpleplanes.client.render.UpgradesModels;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesEntities;
+import xyz.roqadaq.simpleplanes.client.gui.PlaneInventoryScreen;
+import xyz.roqadaq.simpleplanes.client.render.PlaneRenderState;
+import xyz.roqadaq.simpleplanes.client.render.UpgradesModels;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesEntities;
 
 import java.util.function.Function;
 

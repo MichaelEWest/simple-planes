@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.network;
+package xyz.roqadaq.simpleplanes.network;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
@@ -8,8 +8,8 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.Identifier;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.entities.CargoPlaneEntity;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.entities.CargoPlaneEntity;
 
 public record CargoUpgradeRemovedPacket(byte index, int planeEntityID) implements CustomPacketPayload {
 

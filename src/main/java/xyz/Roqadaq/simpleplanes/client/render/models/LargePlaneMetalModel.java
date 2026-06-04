@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.client.render.models;
+package xyz.roqadaq.simpleplanes.client.render.models;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -6,7 +6,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import xyz.przemyk.simpleplanes.client.render.PlaneRenderState;
+import xyz.roqadaq.simpleplanes.client.render.PlaneRenderState;
 
 public class LargePlaneMetalModel extends EntityModel<PlaneRenderState> {
 	private final ModelPart Parts;

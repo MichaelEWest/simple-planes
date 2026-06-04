@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.container.slots;
+package xyz.roqadaq.simpleplanes.container.slots;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;

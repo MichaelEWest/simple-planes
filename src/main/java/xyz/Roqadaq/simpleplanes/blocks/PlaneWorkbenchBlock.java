@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.blocks;
+package xyz.roqadaq.simpleplanes.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -14,8 +14,8 @@ import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.container.PlaneWorkbenchContainer;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.container.PlaneWorkbenchContainer;
 
 import javax.annotation.Nullable;
 

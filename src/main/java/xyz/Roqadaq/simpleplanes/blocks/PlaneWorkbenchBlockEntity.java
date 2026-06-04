@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.blocks;
+package xyz.roqadaq.simpleplanes.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.inventory.DataSlot;
@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesBlocks;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesBlocks;
 
 public class PlaneWorkbenchBlockEntity extends BlockEntity {
 

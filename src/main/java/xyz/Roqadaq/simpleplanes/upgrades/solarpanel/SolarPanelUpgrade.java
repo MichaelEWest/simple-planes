@@ -1,5 +1,5 @@
-package xyz.przemyk.simpleplanes.upgrades.solarpanel;
-import xyz.przemyk.simpleplanes.client.render.PlaneRenderState;
+package xyz.roqadaq.simpleplanes.upgrades.solarpanel;
+import xyz.roqadaq.simpleplanes.client.render.PlaneRenderState;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -10,14 +10,14 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import xyz.przemyk.simpleplanes.client.render.UpgradesModels;
-import xyz.przemyk.simpleplanes.entities.LargePlaneEntity;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesEntities;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesItems;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesUpgrades;
-import xyz.przemyk.simpleplanes.upgrades.Upgrade;
-import xyz.przemyk.simpleplanes.upgrades.engines.electric.ElectricEngineUpgrade;
+import xyz.roqadaq.simpleplanes.client.render.UpgradesModels;
+import xyz.roqadaq.simpleplanes.entities.LargePlaneEntity;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesEntities;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesItems;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesUpgrades;
+import xyz.roqadaq.simpleplanes.upgrades.Upgrade;
+import xyz.roqadaq.simpleplanes.upgrades.engines.electric.ElectricEngineUpgrade;
 
 import javax.annotation.Nullable;
 

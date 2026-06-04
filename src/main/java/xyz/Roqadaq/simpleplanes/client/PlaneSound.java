@@ -1,12 +1,12 @@
-package xyz.przemyk.simpleplanes.client;
+package xyz.roqadaq.simpleplanes.client;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.AbstractTickableSoundInstance;
 import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.sounds.SoundSource;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesSounds;
-import xyz.przemyk.simpleplanes.upgrades.booster.BoosterUpgrade;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesSounds;
+import xyz.roqadaq.simpleplanes.upgrades.booster.BoosterUpgrade;
 
 import java.util.Collections;
 import java.util.HashMap;

@@ -1,11 +1,11 @@
-package xyz.przemyk.simpleplanes.setup;
+package xyz.roqadaq.simpleplanes.setup;
 
 import net.minecraft.resources.Identifier;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddServerReloadListenersEvent;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.datapack.PlaneLiquidFuelReloadListener;
-import xyz.przemyk.simpleplanes.datapack.PlanePayloadReloadListener;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.datapack.PlaneLiquidFuelReloadListener;
+import xyz.roqadaq.simpleplanes.datapack.PlanePayloadReloadListener;
 
 public class SimplePlanesDatapack {
 

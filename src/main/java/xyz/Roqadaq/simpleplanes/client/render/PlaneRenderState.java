@@ -1,10 +1,10 @@
-package xyz.przemyk.simpleplanes.client.render;
-import xyz.przemyk.simpleplanes.client.render.PlaneRenderState;
+package xyz.roqadaq.simpleplanes.client.render;
+import xyz.roqadaq.simpleplanes.client.render.PlaneRenderState;
 
 import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.resources.Identifier;
-import xyz.przemyk.simpleplanes.upgrades.LargeUpgrade;
-import xyz.przemyk.simpleplanes.upgrades.Upgrade;
+import xyz.roqadaq.simpleplanes.upgrades.LargeUpgrade;
+import xyz.roqadaq.simpleplanes.upgrades.Upgrade;
 
 import java.util.ArrayList;
 import java.util.HashMap;

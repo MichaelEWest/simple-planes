@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.container;
+package xyz.roqadaq.simpleplanes.container;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;

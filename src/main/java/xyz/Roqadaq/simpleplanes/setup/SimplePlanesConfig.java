@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.setup;
+package xyz.roqadaq.simpleplanes.setup;
 
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.config.ModConfig;

@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.client;
+package xyz.roqadaq.simpleplanes.client;
 
 import com.google.common.collect.Maps;
 import net.minecraft.client.Minecraft;
@@ -12,7 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.JukeboxPlayable;
 import net.minecraft.world.item.JukeboxSong;
-import xyz.przemyk.simpleplanes.network.JukeboxPacket;
+import xyz.roqadaq.simpleplanes.network.JukeboxPacket;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.entities;
+package xyz.roqadaq.simpleplanes.entities;
 
 import com.mojang.math.Axis;
 import io.netty.buffer.ByteBuf;
@@ -55,26 +55,26 @@ import net.neoforged.neoforge.network.connection.ConnectionType;
 import org.joml.Quaternionf;
 import org.joml.Quaternionfc;
 import org.joml.Vector3f;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.client.PlaneSound;
-import xyz.przemyk.simpleplanes.container.ModifyUpgradesContainer;
-import xyz.przemyk.simpleplanes.container.PlaneInventoryContainer;
-import xyz.przemyk.simpleplanes.misc.MathUtil;
-import xyz.przemyk.simpleplanes.network.*;
-import xyz.przemyk.simpleplanes.setup.*;
-import xyz.przemyk.simpleplanes.upgrades.LargeUpgrade;
-import xyz.przemyk.simpleplanes.upgrades.Upgrade;
-import xyz.przemyk.simpleplanes.upgrades.UpgradeType;
-import xyz.przemyk.simpleplanes.upgrades.armor.ArmorUpgrade;
-import xyz.przemyk.simpleplanes.upgrades.booster.BoosterUpgrade;
-import xyz.przemyk.simpleplanes.upgrades.engines.EngineUpgrade;
-import xyz.przemyk.simpleplanes.upgrades.shooter.ShooterUpgrade;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.client.PlaneSound;
+import xyz.roqadaq.simpleplanes.container.ModifyUpgradesContainer;
+import xyz.roqadaq.simpleplanes.container.PlaneInventoryContainer;
+import xyz.roqadaq.simpleplanes.misc.MathUtil;
+import xyz.roqadaq.simpleplanes.network.*;
+import xyz.roqadaq.simpleplanes.setup.*;
+import xyz.roqadaq.simpleplanes.upgrades.LargeUpgrade;
+import xyz.roqadaq.simpleplanes.upgrades.Upgrade;
+import xyz.roqadaq.simpleplanes.upgrades.UpgradeType;
+import xyz.roqadaq.simpleplanes.upgrades.armor.ArmorUpgrade;
+import xyz.roqadaq.simpleplanes.upgrades.booster.BoosterUpgrade;
+import xyz.roqadaq.simpleplanes.upgrades.engines.EngineUpgrade;
+import xyz.roqadaq.simpleplanes.upgrades.shooter.ShooterUpgrade;
 
 import javax.annotation.Nullable;
 import java.util.*;
 
 import static net.minecraft.util.Mth.wrapDegrees;
-import static xyz.przemyk.simpleplanes.misc.MathUtil.*;
+import static xyz.roqadaq.simpleplanes.misc.MathUtil.*;
 
 @SuppressWarnings({"deprecation"})
 public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
@@ -88,7 +88,7 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
     public static final EntityDataAccessor<Integer> THROTTLE = SynchedEntityData.defineId(PlaneEntity.class, EntityDataSerializers.INT);
     public static final EntityDataAccessor<Byte> PITCH_UP = SynchedEntityData.defineId(PlaneEntity.class, EntityDataSerializers.BYTE);
     public static final EntityDataAccessor<Byte> YAW_RIGHT = SynchedEntityData.defineId(PlaneEntity.class, EntityDataSerializers.BYTE);
-    public static final int MAX_THROTTLE = 5;
+    public static final int MAX_THROTTLE = 8;
     public Quaternionf Q_Client = new Quaternionf();
     public Quaternionf Q_Prev = new Quaternionf();
 
@@ -192,6 +192,11 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
     public boolean isPowered() {
         return isAlive() && !level().dimensionTypeRegistration().is(BLACKLISTED_DIMENSIONS_TAG) && (isCreative() || (engineUpgrade != null && engineUpgrade.isPowered()));
     }
+    @Override
+    public boolean isFlyingVehicle() {
+        return true;
+    }
+
     @Override
     protected boolean canAddPassenger(Entity passenger) {
         List<Entity> passengers = getPassengers();
@@ -410,9 +415,9 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
     }
         boolean doPitch = true;
         //pitch + movement speed
-        if (getOnGround() || isOnWater()) {
+        if (onGround() || isOnWater()) {
             doPitch = tickOnGround(tempMotionVars);
-} else {
+        } else {
             onGroundTicks--;
     }
         if (doPitch) {
@@ -652,7 +657,7 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
         if (pushVec.length() != 0 && motion.length() > 0.1) {
             double dot = normalizedDotProduct(pushVec, motion);
             pushVec = pushVec.scale(Mth.clamp(1 - dot * speed / (tempMotionVars.maxPushSpeed * (tempMotionVars.push + 0.05)), 0, 2));
-    }
+        }
         motion = motion.add(pushVec);
 
         motion = motion.add(0, tempMotionVars.gravity, 0);
@@ -757,7 +762,8 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
         return q;
     }
     public Vector3f transformPos(Vector3f relPos) {
-        EulerAngles angles = toEulerAngles(getQ_Client());
+        Quaternionf q = level().isClientSide() ? getQ_Client() : getQ();
+        EulerAngles angles = toEulerAngles(q);
         angles.yaw = -angles.yaw;
         angles.roll = -angles.roll;
         relPos.rotate(toQuaternionf(angles.yaw, angles.pitch, angles.roll));
@@ -776,7 +782,7 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
     }
 
     protected void readAdditionalSaveData(ValueInput in) {
-        entityData.set(MAX_SPEED, in.getFloatOr("max_speed", 0.25f));
+        entityData.set(MAX_SPEED, in.getFloatOr("max_speed", 1.0f));
         int maxHealth = in.getIntOr("max_health", 10);
         if (maxHealth <= 0) maxHealth = 20;
         entityData.set(MAX_HEALTH, maxHealth);

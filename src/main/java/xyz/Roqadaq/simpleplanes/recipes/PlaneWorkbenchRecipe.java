@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.recipes;
+package xyz.roqadaq.simpleplanes.recipes;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -6,7 +6,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesRecipes;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesRecipes;
 
 public record PlaneWorkbenchRecipe(Ingredient ingredient, int ingredientAmount,
                                    int materialAmount,

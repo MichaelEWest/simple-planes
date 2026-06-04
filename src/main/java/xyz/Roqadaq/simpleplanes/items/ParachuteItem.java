@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.items;
+package xyz.roqadaq.simpleplanes.items;
 
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.stats.Stats;
@@ -8,7 +8,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import xyz.przemyk.simpleplanes.entities.ParachuteEntity;
+import xyz.roqadaq.simpleplanes.entities.ParachuteEntity;
 
 public class ParachuteItem extends Item {
 

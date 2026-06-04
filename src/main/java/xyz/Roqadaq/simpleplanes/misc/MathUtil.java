@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.misc;
+package xyz.roqadaq.simpleplanes.misc;
 
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;

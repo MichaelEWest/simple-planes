@@ -1,15 +1,15 @@
-package xyz.przemyk.simpleplanes.setup;
+package xyz.roqadaq.simpleplanes.setup;
 
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.blocks.ChargingStationBlock;
-import xyz.przemyk.simpleplanes.blocks.ChargingStationBlockEntity;
-import xyz.przemyk.simpleplanes.blocks.PlaneWorkbenchBlock;
-import xyz.przemyk.simpleplanes.blocks.PlaneWorkbenchBlockEntity;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.blocks.ChargingStationBlock;
+import xyz.roqadaq.simpleplanes.blocks.ChargingStationBlockEntity;
+import xyz.roqadaq.simpleplanes.blocks.PlaneWorkbenchBlock;
+import xyz.roqadaq.simpleplanes.blocks.PlaneWorkbenchBlockEntity;
 
 import java.util.function.Supplier;
 

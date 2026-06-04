@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.items;
+package xyz.roqadaq.simpleplanes.items;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;

@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.upgrades.banner;
+package xyz.roqadaq.simpleplanes.upgrades.banner;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;

@@ -1,5 +1,5 @@
-package xyz.przemyk.simpleplanes.upgrades.armor;
-import xyz.przemyk.simpleplanes.client.render.PlaneRenderState;
+package xyz.roqadaq.simpleplanes.upgrades.armor;
+import xyz.roqadaq.simpleplanes.client.render.PlaneRenderState;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -7,7 +7,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
 
 public class HeliArmorModel extends EntityModel<PlaneRenderState> {
 	private final ModelPart Armor;

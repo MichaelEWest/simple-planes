@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.client;
+package xyz.roqadaq.simpleplanes.client;
 
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
@@ -10,15 +10,15 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.*;
 import org.lwjgl.glfw.GLFW;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.client.gui.ModifyUpgradesScreen;
-import xyz.przemyk.simpleplanes.client.gui.PlaneInventoryScreen;
-import xyz.przemyk.simpleplanes.client.gui.PlaneWorkbenchScreen;
-import xyz.przemyk.simpleplanes.client.gui.StorageScreen;
-import xyz.przemyk.simpleplanes.client.render.PlaneItemColors;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesContainers;
-import xyz.przemyk.simpleplanes.upgrades.booster.BoosterUpgrade;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.client.gui.ModifyUpgradesScreen;
+import xyz.roqadaq.simpleplanes.client.gui.PlaneInventoryScreen;
+import xyz.roqadaq.simpleplanes.client.gui.PlaneWorkbenchScreen;
+import xyz.roqadaq.simpleplanes.client.gui.StorageScreen;
+import xyz.roqadaq.simpleplanes.client.render.PlaneItemColors;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesContainers;
+import xyz.roqadaq.simpleplanes.upgrades.booster.BoosterUpgrade;
 
 @EventBusSubscriber(value = Dist.CLIENT, modid = SimplePlanesMod.MODID)
 public class ModBusClientEventHandler {

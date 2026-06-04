@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.items;
+package xyz.roqadaq.simpleplanes.items;
 
 import net.minecraft.core.Holder;
 import net.minecraft.world.item.Item;

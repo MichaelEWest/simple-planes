@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.compat.ironchest;
+package xyz.roqadaq.simpleplanes.compat.ironchest;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.player.Inventory;
@@ -8,8 +8,8 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesUpgrades;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesUpgrades;
 
 import java.util.function.Consumer;
 

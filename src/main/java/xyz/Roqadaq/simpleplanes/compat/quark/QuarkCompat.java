@@ -1,10 +1,10 @@
-package xyz.przemyk.simpleplanes.compat.quark;
+package xyz.roqadaq.simpleplanes.compat.quark;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesUpgrades;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesUpgrades;
 
 public class QuarkCompat {
 

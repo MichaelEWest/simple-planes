@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.client.render;
+package xyz.roqadaq.simpleplanes.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.SubmitNodeCollector;
@@ -7,8 +7,8 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.Identifier;
-import xyz.przemyk.simpleplanes.client.render.models.ParachuteModel;
-import xyz.przemyk.simpleplanes.entities.ParachuteEntity;
+import xyz.roqadaq.simpleplanes.client.render.models.ParachuteModel;
+import xyz.roqadaq.simpleplanes.entities.ParachuteEntity;
 
 public class ParachuteRenderer extends EntityRenderer<ParachuteEntity, ParachuteRenderState> {
 

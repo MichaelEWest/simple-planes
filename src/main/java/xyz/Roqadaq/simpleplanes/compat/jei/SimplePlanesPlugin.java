@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.compat.jei;
+package xyz.roqadaq.simpleplanes.compat.jei;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -8,12 +8,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.client.gui.PlaneWorkbenchScreen;
-import xyz.przemyk.simpleplanes.container.PlaneWorkbenchContainer;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesContainers;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesItems;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesRecipes;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.client.gui.PlaneWorkbenchScreen;
+import xyz.roqadaq.simpleplanes.container.PlaneWorkbenchContainer;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesContainers;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesItems;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesRecipes;
 
 @JeiPlugin
 public class SimplePlanesPlugin implements IModPlugin {

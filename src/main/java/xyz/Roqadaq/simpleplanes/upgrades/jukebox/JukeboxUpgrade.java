@@ -1,5 +1,5 @@
-package xyz.przemyk.simpleplanes.upgrades.jukebox;
-import xyz.przemyk.simpleplanes.client.render.PlaneRenderState;
+package xyz.roqadaq.simpleplanes.upgrades.jukebox;
+import xyz.roqadaq.simpleplanes.client.render.PlaneRenderState;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -15,11 +15,11 @@ import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
-import xyz.przemyk.simpleplanes.client.MovingSound;
-import xyz.przemyk.simpleplanes.entities.PlaneEntity;
-import xyz.przemyk.simpleplanes.network.JukeboxPacket;
-import xyz.przemyk.simpleplanes.setup.SimplePlanesUpgrades;
-import xyz.przemyk.simpleplanes.upgrades.LargeUpgrade;
+import xyz.roqadaq.simpleplanes.client.MovingSound;
+import xyz.roqadaq.simpleplanes.entities.PlaneEntity;
+import xyz.roqadaq.simpleplanes.network.JukeboxPacket;
+import xyz.roqadaq.simpleplanes.setup.SimplePlanesUpgrades;
+import xyz.roqadaq.simpleplanes.upgrades.LargeUpgrade;
 
 public class JukeboxUpgrade extends LargeUpgrade {
 

@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.setup;
+package xyz.roqadaq.simpleplanes.setup;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.flag.FeatureFlags;
@@ -6,11 +6,11 @@ import net.minecraft.world.inventory.MenuType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import xyz.przemyk.simpleplanes.SimplePlanesMod;
-import xyz.przemyk.simpleplanes.container.PlaneInventoryContainer;
-import xyz.przemyk.simpleplanes.container.PlaneWorkbenchContainer;
-import xyz.przemyk.simpleplanes.container.ModifyUpgradesContainer;
-import xyz.przemyk.simpleplanes.container.StorageContainer;
+import xyz.roqadaq.simpleplanes.SimplePlanesMod;
+import xyz.roqadaq.simpleplanes.container.PlaneInventoryContainer;
+import xyz.roqadaq.simpleplanes.container.PlaneWorkbenchContainer;
+import xyz.roqadaq.simpleplanes.container.ModifyUpgradesContainer;
+import xyz.roqadaq.simpleplanes.container.StorageContainer;
 
 import java.util.function.Supplier;
 

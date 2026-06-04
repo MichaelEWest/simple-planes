@@ -1,4 +1,4 @@
-package xyz.przemyk.simpleplanes.network;
+package xyz.roqadaq.simpleplanes.network;
 
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
