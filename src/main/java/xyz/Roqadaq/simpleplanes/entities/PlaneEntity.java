@@ -684,7 +684,7 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
             onGroundTicks--;
     }
         float pitch = getGroundPitch();
-        if ((isPowered() && getPitchUp() > 0) || isOnWater()) {
+        if (isPowered() && getPitchUp() > 0 && !isOnWater()) {
             pitch = 0;
 } else if (getDeltaMovement().length() > tempMotionVars.takeOffSpeed) {
             pitch /= 2;
@@ -692,9 +692,9 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
         setXRot(lerpAngle(0.1f, getXRot(), pitch));
 
         if (degreesDifferenceAbs(getXRot(), 0) > 1 && getDeltaMovement().length() < 0.1) {
-            tempMotionVars.push /= 5; //runs while the plane is taking off
+            tempMotionVars.push = Math.min(tempMotionVars.push, 0.01f);
     }
-        if (getDeltaMovement().length() < tempMotionVars.takeOffSpeed) {
+        if (getDeltaMovement().length() < tempMotionVars.takeOffSpeed && !isOnWater()) {
             //                rotationPitch = lerpAngle(0.2f, rotationPitch, pitch);
             speedingUp = false;
             //                push = 0;
@@ -755,7 +755,9 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
                 if (degreesDifferenceAbs(yaw, getYRot()) > 90) {
                     yaw = yaw - 180;
     }
-                Quaternionf q1 = toQuaternionf(yaw, pitch, rotationRoll);
+                // Q can only raise the nose toward motion direction, not push it below current xRot
+                float pitchForQ = pitch < getXRot() ? getXRot() : pitch;
+                Quaternionf q1 = toQuaternionf(yaw, pitchForQ, rotationRoll);
                 q = lerpQ(tempMotionVars.motionToRotation, q, q1);
 }
     }
@@ -782,7 +784,7 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
     }
 
     protected void readAdditionalSaveData(ValueInput in) {
-        entityData.set(MAX_SPEED, in.getFloatOr("max_speed", 1.0f));
+        entityData.set(MAX_SPEED, Math.max(in.getFloatOr("max_speed", 1.0f), 1.0f));
         int maxHealth = in.getIntOr("max_health", 10);
         if (maxHealth <= 0) maxHealth = 20;
         entityData.set(MAX_HEALTH, maxHealth);
@@ -1229,7 +1231,7 @@ public class PlaneEntity extends Entity implements IEntityWithComplexSpawn {
             moveStrafing = 0;
             maxSpeed = 3;
             takeOffSpeed = 0.3;
-            maxLift = 2;
+            maxLift = 3;
             liftFactor = 10;
             gravity = -0.03;
             drag = 0.001;

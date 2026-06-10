@@ -31,11 +31,14 @@ public class ElectricEngineUpgrade extends EngineUpgrade {
     @Override
     public void tick() {
         if (planeEntity.getThrottle() > 0) {
-            if (energyStorage.extractEnergy(12 * planeEntity.getFuelCost(), false) > 0) {
+            if (!planeEntity.level().isClientSide()) {
+                energyStorage.extractEnergy(12 * planeEntity.getFuelCost(), false);
+            }
+            if (isPowered()) {
                 updateClient();
-}
-}
-}
+            }
+        }
+    }
     @Override
     public boolean isPowered() {
         return energyStorage.getEnergyStored() > 12 * planeEntity.getFuelCost();

@@ -35,20 +35,24 @@ public class FurnaceEngineUpgrade extends EngineUpgrade {
     @Override
     public void tick() {
         if (burnTime > 0) {
-            burnTime -= planeEntity.getFuelCost();
+            int throttle = planeEntity.getThrottle();
+            int maxThrottle = xyz.roqadaq.simpleplanes.entities.PlaneEntity.MAX_THROTTLE;
+            burnTime -= planeEntity.getFuelCost() * throttle / maxThrottle;
             updateClient();
-} else if (planeEntity.getThrottle() > 0) {
+        } else if (planeEntity.getThrottle() > 0) {
             ItemStack itemStack = itemStackHandler.getStackInSlot(0);
             int itemBurnTime = itemStack.getBurnTime(RecipeType.SMELTING, planeEntity.level().fuelValues());
             if (itemBurnTime > 0) {
                 burnTimeTotal = itemBurnTime;
                 burnTime = itemBurnTime;
-                itemStackHandler.extractItem(0, 1, false);
-                // TODO: crafting remainder (bucket recovery) - getCraftingRemainingItem removed in MC 1.21.5
-                updateClient();
-}
-}
-}
+                if (!planeEntity.level().isClientSide()) {
+                    itemStackHandler.extractItem(0, 1, false);
+                    // TODO: crafting remainder (bucket recovery) - getCraftingRemainingItem removed in MC 1.21.5
+                    updateClient();
+                }
+            }
+        }
+    }
     @Override
     public boolean isPowered() {
         return burnTime > 0;
@@ -124,11 +128,12 @@ public class FurnaceEngineUpgrade extends EngineUpgrade {
         if (!fuelStack.isEmpty()) {
             int i2 = scaledHeight - 16 - 3;
             if (side == HumanoidArm.LEFT) {
-                // TODO: renderItem/renderItemDecorations API changed in MC 1.21.5
-                // guiGraphics.renderItem(fuelStack, i - 91 - 26, i2);
-} else {
-                // guiGraphics.renderItem(fuelStack, i + 91 + 3, i2);
-}
+                guiGraphics.item(fuelStack, i - 91 - 26, i2);
+                guiGraphics.itemDecorations(mc.font, fuelStack, i - 91 - 26, i2);
+            } else {
+                guiGraphics.item(fuelStack, i + 91 + 3, i2);
+                guiGraphics.itemDecorations(mc.font, fuelStack, i + 91 + 3, i2);
+            }
 }
 }
     @Override

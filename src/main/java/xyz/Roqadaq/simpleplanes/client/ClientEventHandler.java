@@ -113,11 +113,18 @@ public class ClientEventHandler {
 
         float partial = event.getPartialTick();
         Quaternionf q = MathUtil.lerpQ(partial, riderQPrev, riderQClient);
-        MathUtil.EulerAngles angles = MathUtil.toEulerAngles(q);
 
-        PoseStack poseStack = event.getPoseStack();
-        poseStack.mulPose(Axis.ZP.rotationDegrees((float) angles.roll));
-        poseStack.mulPose(Axis.XP.rotationDegrees((float) -angles.pitch));
+        // The plane renderer applies: scale(-1,-1,1) * Axis.YP(180°) * q  =  Axis.XP(180°) * q.
+        // The character renderer applies (from vertex's view): scale(-1,-1,1) → R_y → q_ours.
+        // For q_ours * R_y * scale(-1,-1,1) = Axis.XP(180°) * q  →  Axis.ZP(180°) = scale(-1,-1,1):
+        //   q_ours = Axis.XP(180°) * q * Axis.ZP(180°) * R_y_inv
+        float bodyRot = (float) MathUtil.toEulerAngles(q).yaw;
+        Quaternionf qOurs = new Quaternionf(Axis.XP.rotationDegrees(180.0f))
+                .mul(q)
+                .mul(Axis.ZP.rotationDegrees(180.0f))
+                .mul(Axis.YP.rotationDegrees(bodyRot - 180.0f));
+
+        event.getPoseStack().mulPose(qOurs);
     }
     //TODO: make it so player rotation variables correspond to what he is actually looking at, so that guns etc. shoot in the right direction
     @SubscribeEvent(priority = EventPriority.LOWEST)
@@ -125,9 +132,9 @@ public class ClientEventHandler {
         Camera camera = event.getCamera();
         Entity player = camera.entity();
         if (player.getVehicle() instanceof PlaneEntity planeEntity) {
-            if (!camera.isDetached()) {
-                double partialTicks = event.getPartialTick();
+            double partialTicks = event.getPartialTick();
 
+            if (!camera.isDetached()) {
                 Quaternionf qPrev = planeEntity.getQ_Prev();
                 Quaternionf qNow = planeEntity.getQ_Client();
 
@@ -142,7 +149,13 @@ public class ClientEventHandler {
                 event.setPitch(-(float) MathUtil.lerpAngle(partialTicks, eulerAnglesPrev.pitch, eulerAnglesNow.pitch));
                 event.setYaw((float) MathUtil.lerpAngle(partialTicks, eulerAnglesPrev.yaw, eulerAnglesNow.yaw));
                 event.setRoll(-(float) MathUtil.lerpAngle(partialTicks, eulerAnglesPrev.roll, eulerAnglesNow.roll));
-}
+            } else {
+                // 3rd person: let Minecraft control orbit yaw/pitch; only apply roll so the
+                // horizon tilts with the plane and the character model appears correctly oriented.
+                MathUtil.EulerAngles prev = MathUtil.toEulerAngles(planeEntity.getQ_Prev());
+                MathUtil.EulerAngles now  = MathUtil.toEulerAngles(planeEntity.getQ_Client());
+                event.setRoll(-(float) MathUtil.lerpAngle(partialTicks, prev.roll, now.roll));
+            }
 }
 }
     @SubscribeEvent
